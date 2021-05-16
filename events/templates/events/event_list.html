@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Events</title>
+  </head>
+  <body>
+    <h1>Event List</h1>
+    <nav>
+        <ul>
+          <li>
+            <form class="logout-link" action="{% url 'accounts:logout'%}" method="post">
+              {% csrf_token %}
+              <button type="submit">Logout</button>
+            </form>
+          </li>
+        </ul>
+      </nav>
+    <div class='event'>
+      {% for event in events %}
+        <h2><a href="#">{{event.production}}</a></h2>
+        <p>{{event.body}}</p>
+        <!-- add more to this when model updated -->
+      {% endfor %}
+    </div>
+  </body>
+</html>
