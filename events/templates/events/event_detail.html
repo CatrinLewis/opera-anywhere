@@ -1,0 +1,13 @@
+{% extends 'base_layout.html' %}
+{% load static %}
+
+{% block content%}
+<div class="event-detail">
+  <img class="event-details-icons" src="{{ event.thumb.url }}"/>
+  <p class="thick">{{ event.production }}</p>
+  <p>{{ event.performance_date }}</p>
+  <p>{{ event.location }}</p>
+  <p>{{ event.body }}</p>
+</div>
+
+{% endblock %}

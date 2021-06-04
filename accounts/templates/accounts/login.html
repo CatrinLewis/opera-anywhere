@@ -1,15 +1,30 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Login</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <title>Log In</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src ="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src ="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
   </head>
   <body>
-    <h1>Log in</h1>
+    <div class="wrapper">
+      <div class="container-fluid" >
+        <ul class="nav">
+          <li class="nav-item">
+            <a href="{% url 'home' %}"><img class="logo nav-link" src="{% static 'opera-anywhere-logo-image.jpg' %}"/></a>
+          </li>
+        </ul>
+      </div>
+    </div>
     <form class="site-form" action="{% url 'accounts:login'%}" method="post">
       {% csrf_token %}
       {{ form }}
       <input type="submit" value="Login">
-  </form>
+    </form>
   </body>
 </html>

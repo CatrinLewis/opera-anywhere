@@ -4,6 +4,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
     <title>Events</title>
     <link rel="stylesheet" href="{% static 'styles.css' %}">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
@@ -12,6 +13,19 @@
   </head>
   <body>
     <div class="wrapper">
+      <div class="container-fluid" >
+        <ul class="nav">
+          <li class="nav-item">
+            <a href="{% url 'home' %}"><img class="logo nav-link" src="{% static 'opera-anywhere-logo-image.jpg' %}"/></a>
+          </li>
+          <li class="nav-item">
+            <form action="{% url 'accounts:logout'%}" method="post">
+              {% csrf_token %}
+              <button class="logout-button nav-link" type="submit">Logout</button>
+            </form>
+          </li>
+        </ul>
+      <div>
       {% block content %}
       {% endblock %}
     </div>
