@@ -7,7 +7,7 @@
   <p class="thick">{{ event.production }}</p>
   <p>{{ event.performance_date }}</p>
   <p>{{ event.location }}</p>
-  <p>{{ event.body }}</p>
+  <p>{{ event.body|safe }}</p>
 </div>
 
 {% endblock %}

@@ -4,7 +4,7 @@ from django.db import models
 class Event(models.Model):
     production = models.CharField(max_length=100)
     thumb = models.ImageField(default='default.png', blank=True)
-    performance_date = models.TextField(blank=True)
+    performance_date = models.DateTimeField(blank=True)
     location = models.TextField(blank=True)
     body = models.TextField()
     posting_date = models.DateTimeField(auto_now_add=True)
