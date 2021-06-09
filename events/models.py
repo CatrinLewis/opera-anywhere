@@ -12,3 +12,9 @@ class Event(models.Model):
     #production to be a dropdown menu
     #slug based on production name won't work
     #date of production - calendar needed. Plus date of post. Two types of date.
+
+    class Meta:
+        ordering = ['performance_date']
+
+    def __str__(self):
+        return self.production + ' at ' + self.location
