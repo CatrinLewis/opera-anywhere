@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'events',
     'accounts',
     'resources',
+    'django_summernote',
 ]
 
 MIDDLEWARE = [

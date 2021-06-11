@@ -21,11 +21,16 @@ from django.conf.urls.static import static
 from django.conf import settings
 from events import views as event_views
 
+# if settings.DEBUG:
+#     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+# X_FRAME_OPTIONS = 'SAMEORIGIN'
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('accounts.urls')),
     path('events/', include('events.urls')),
     path('resources/', include('resources.urls')),
+    path('summernote/', include('django_summernote.urls')),
     path('about/', views.about),
     path('', event_views.event_list, name="home"),
 ]
